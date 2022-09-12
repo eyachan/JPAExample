@@ -1,6 +1,7 @@
 package com.eya.jpaexample.controller;
 
 import com.eya.jpaexample.dto.OrderRequest;
+import com.eya.jpaexample.dto.OrderResponse;
 import com.eya.jpaexample.model.Customer;
 import com.eya.jpaexample.repository.CustomerRepository;
 import com.eya.jpaexample.repository.ProductRepository;
@@ -29,6 +30,11 @@ public class OrderController {
     @GetMapping("/findAllOrder")
     public List<Customer> findAllCustomer() {
         return customerRepository.findAll();
+    }
+
+    @GetMapping("/getJoinInfosr")
+    public List<OrderResponse> getInfo() {
+        return customerRepository.getJoiningInformation();
     }
 
 }
